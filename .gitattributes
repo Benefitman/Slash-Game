@@ -1,0 +1,21 @@
+Content/** filter=lfs diff=lfs merge=lfs -text
+.umap filter=lfs diff=lfs merge=lfs -text
+.uasset filter=lfs diff=lfs merge=lfs -text
+.cpp filter=lfs diff=lfs merge=lfs -text
+.h filter=lfs diff=lfs merge=lfs -text
+Config/ filter=lfs diff=lfs merge=lfs -text
+*.uasset filter=lfs diff=lfs merge=lfs -text
+*.umap filter=lfs diff=lfs merge=lfs -text
+
+# Setze Zeilenendungen für Textdateien auf LF
+*.txt text eol=lf
+*.md text eol=lf
+*.sh text eol=lf
+*.gitignore text eol=lf
+
+# Setze Zeilenendungen für Windows-spezifische Dateien auf CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Setze Standardzeilenendungen für alle anderen Textdateien
+* text=auto

@@ -1,0 +1,40 @@
+# Build and Intermediate files
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+.vscode/
+
+# Ignore Mac system files
+.DS_Store
+
+# Ignore Visual Studio files
+*.sln
+*.suo
+*.vcxproj
+*.vcxproj.*
+*.pidb
+*.user
+*.userosscache
+*.userprefs
+*.o
+*.obj
+*.exe
+*.pdb
+*.idb
+*.class
+*.psess
+*.psess.*
+
+# Ignore build output
+*.log
+*.tlog
+
+# Ignore auto-generated files
+*.opensdf
+*.sdf
+*.ipch
+*.aps
+*.ncb
+*.opendb
+*.VC.db
