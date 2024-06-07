@@ -64,9 +64,25 @@ protected:
 	 **/
 
 	void PlayAttackMontage();
+	
+	UFUNCTION(BlueprintCallable)
+	void AttackEnd();
+	bool CanAttack();
+	void PlayEquipMontage(FName SectionName);
+	bool CanDisarm();
+	bool CanArm();
+
+	UFUNCTION(BlueprintCallable)
+	void Disarm();
+
+	UFUNCTION(BlueprintCallable)
+	void Arm();
+
+	UFUNCTION(BlueprintCallable)
+	void FinishEquipping();
 
 private:
-
+	UPROPERTY(VisibleAnywhere)
 	ECharacterState CharacterState = ECharacterState::ECS_Unequipped;
 
 	UPROPERTY(BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
@@ -75,7 +91,7 @@ private:
 	UPROPERTY(VisibleAnywhere)
 	USpringArmComponent* CameraBoom;
 
-	UPROPERTY(VisibleAnywhere)
+
 	UCameraComponent* ViewCamera;
 
 	UPROPERTY(VisibleAnywhere, Category = "Hair")
@@ -100,12 +116,6 @@ private:
 
 	UPROPERTY(EditDefaultsOnly, Category = Montages)
 	UAnimMontage* EquipMontage;
-	UFUNCTION(BlueprintCallable)
-	void AttackEnd();
-	bool CanAttack();
-	void PlayEquipMontage(FName SectionName);
-	bool CanDisarm();
-	bool CanArm();
 
 public:
 	FORCEINLINE void SetOverlappingItem(AItem* Item) { OverlappingItem = Item; }
