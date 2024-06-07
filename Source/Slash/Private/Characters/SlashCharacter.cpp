@@ -196,6 +196,7 @@ void ASlashCharacter::AttackEnd()
 
 void ASlashCharacter::Jump()
 {
+	if (ActionState != EActionState::EAS_Unoccupied) return;
 	Super::Jump();
 }
 
