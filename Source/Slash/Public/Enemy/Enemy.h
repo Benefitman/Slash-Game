@@ -21,10 +21,24 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	virtual void GetHit(const FVector& ImpactPoint) override;
+
+private:
+	/**
+	 * Animation Montages
+	*/
+
+	UPROPERTY(EditDefaultsOnly, Category = Montages)
+	UAnimMontage* HitReactMontage;
 	
 protected:
 
 	virtual void BeginPlay() override;
+	
+	/**
+	* Play Montage Functions
+	**/
+
+	void PlayHitReactMontage(const FName& SectionName);
 
 public:	
 
