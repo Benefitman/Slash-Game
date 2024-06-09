@@ -257,8 +257,10 @@
     <setting file="file://$PROJECT_DIR$/../../Epic Games/UE_5.3/Engine/Plugins/Experimental/HairModelingToolset/Source/HairModelingToolset/Private/GroomToMeshTool.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Epic Games/UE_5.3/Engine/Plugins/Runtime/HairStrands/Source/HairStrandsCore/Public/GroomComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/DebugMacros.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Slash/Private/Interfaces/HitInterface.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Private/Item/Weapon/Weapon.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Public/Characters/SlashCharacter.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Slash/Public/Interfaces/HitInterface.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Public/Item/Weapon/Weapon.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Slash.Build.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -482,7 +484,7 @@
       <workItem from="1717867451989" duration="2509000" />
       <workItem from="1717907819016" duration="267000" />
       <workItem from="1717908285611" duration="9399000" />
-      <workItem from="1717923602659" duration="340000" />
+      <workItem from="1717923602659" duration="1588000" />
     </task>
     <servers />
   </component>
