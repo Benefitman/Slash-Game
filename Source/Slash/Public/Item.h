@@ -53,6 +53,8 @@ protected:
 
 	EItemState ItemState = EItemState::EIS_Hovering;
 	
+	UPROPERTY(VisibleAnywhere)
+    	USphereComponent* Sphere;
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -62,8 +64,7 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	float RunningTime;
 
-	UPROPERTY(VisibleAnywhere)
-	USphereComponent* Sphere;
+	
 	
 };
 
