@@ -7,6 +7,8 @@
 #include "Interfaces/HitInterface.h"
 #include "Enemy.generated.h"
 
+class UAnimMontage;
+
 UCLASS()
 class SLASH_API AEnemy : public ACharacter, public IHitInterface
 {
@@ -24,9 +26,8 @@ public:
 
 private:
 	/**
-	 * Animation Montages
+	* Animation montages
 	*/
-
 	UPROPERTY(EditDefaultsOnly, Category = Montages)
 	UAnimMontage* HitReactMontage;
 	
@@ -35,9 +36,9 @@ protected:
 	virtual void BeginPlay() override;
 	
 	/**
-	* Play Montage Functions
-	**/
-
+	* Play montage functions
+	*/
+	
 	void PlayHitReactMontage(const FName& SectionName);
 
 public:	

@@ -37,7 +37,6 @@ void AEnemy::PlayHitReactMontage(const FName& SectionName)
 	}
 }
 
-
 void AEnemy::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
