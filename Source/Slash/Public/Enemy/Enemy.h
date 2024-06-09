@@ -24,6 +24,8 @@ public:
 
 	virtual void GetHit(const FVector& ImpactPoint) override;
 
+	void DirectionalHitReact(const FVector& ImpactPoint);
+
 private:
 	/**
 	* Animation montages
