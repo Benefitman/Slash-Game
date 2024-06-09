@@ -10,7 +10,9 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GroomComponent.h"
 #include "Item.h"
+#include "Components/BoxComponent.h"
 #include "Item/Weapon/Weapon.h"
+#include "Components/BoxComponent.h"
 
 // Sets default values
 ASlashCharacter::ASlashCharacter()
@@ -198,6 +200,14 @@ void ASlashCharacter::Jump()
 {
 	if (ActionState != EActionState::EAS_Unoccupied) return;
 	Super::Jump();
+}
+
+void ASlashCharacter::SetWeaponCollisionEnabled(ECollisionEnabled::Type CollisionEnabled)
+{
+	if (EquippedWeapon && EquippedWeapon->GetWeaponBox())
+	{
+		EquippedWeapon->GetWeaponBox()->SetCollisionEnabled(CollisionEnabled);
+	}
 }
 
 void ASlashCharacter::Tick(float DeltaTime)
