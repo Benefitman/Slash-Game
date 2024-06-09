@@ -4,6 +4,7 @@
 #include "Enemy/Enemy.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "Components/CapsuleComponent.h"
+#include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetSystemLibrary.h"
 #include "Slash/DebugMacros.h"
 
@@ -102,5 +103,13 @@ void AEnemy::GetHit(const FVector& ImpactPoint)
 {
 	DRAW_SPHERE_COLOR(ImpactPoint, FColor::Orange);
 	DirectionalHitReact(ImpactPoint);
+	if (HitSound)
+	{
+		UGameplayStatics::PlaySoundAtLocation(
+			this,
+			HitSound,
+			ImpactPoint
+		);
+	}
 }
 
