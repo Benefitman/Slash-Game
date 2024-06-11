@@ -55,6 +55,10 @@ protected:
 	
 	UPROPERTY(VisibleAnywhere)
     	USphereComponent* Sphere;
+
+	UPROPERTY(EditAnywhere)
+	class UNiagaraComponent* EmbersEffect;
+	
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -62,9 +66,7 @@ public:
 private:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
-	float RunningTime;
-
-	
+	float RunningTime;	
 	
 };
 
