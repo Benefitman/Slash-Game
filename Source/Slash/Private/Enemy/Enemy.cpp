@@ -35,10 +35,6 @@ AEnemy::AEnemy()
 void AEnemy::BeginPlay()
 {
 	Super::BeginPlay();
-	if (HealthBarWidget)
-	{
-		HealthBarWidget->SetHealthPercent(1.f);
-	}
 	
 }
 
@@ -113,6 +109,17 @@ void AEnemy::DirectionalHitReact(const FVector& ImpactPoint)
 	UKismetSystemLibrary::DrawDebugArrow(this, GetActorLocation(), GetActorLocation() + Forward * 60.f, 5.f, FColor::Red, 5.f);
 	UKismetSystemLibrary::DrawDebugArrow(this, GetActorLocation(), GetActorLocation() + ToHit * 60.f, 5.f, FColor::Green, 5.f);
 	*/
+}
+
+float AEnemy::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator,
+	AActor* DamageCauser)
+{
+	if (Attribute && HealthBarWidget)
+	{
+		Attribute->RecieveDamage(DamageAmount);
+		HealthBarWidget->SetHealthPercent(Attribute->GetHealthPercent());
+	}
+	return DamageAmount;
 }
 
 void AEnemy::GetHit_Implementation(const FVector& ImpactPoint)
