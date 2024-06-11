@@ -69,6 +69,8 @@ void AEnemy::Die()
 		}
 		AnimInstance->Montage_JumpToSection(SectionName, DeathMontage);
 	}
+	GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	SetLifeSpan(4.f);
 }
 
 void AEnemy::PlayHitReactMontage(const FName& SectionName)
