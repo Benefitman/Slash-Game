@@ -258,11 +258,13 @@
     <setting file="file://$PROJECT_DIR$/../../Epic Games/UE_5.3/Engine/Plugins/Runtime/HairStrands/Source/HairStrandsCore/Public/GroomComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/DebugMacros.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Private/Breakable/BreakableActor.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Slash/Private/Components/AttributeComponent.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Private/Enemy/Enemy.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Private/Interfaces/HitInterface.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Private/Items/Treasure.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Public/Breakable/BreakableActor.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Public/Characters/SlashCharacter.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Slash/Public/Components/AttributeComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Public/Enemy/Enemy.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Public/Interfaces/HitInterface.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Public/Item/Treasure.h" root0="FORCE_HIGHLIGHTING" />
@@ -503,6 +505,7 @@
       <workItem from="1718092091710" duration="126000" />
       <workItem from="1718092373338" duration="269000" />
       <workItem from="1718092803236" duration="119000" />
+      <workItem from="1718092986750" duration="3420000" />
     </task>
     <servers />
   </component>
