@@ -7,7 +7,7 @@
 #include "Interfaces/HitInterface.h"
 #include "Enemy.generated.h"
 
-class UWidgetComponent;
+class UHealthBarComponent;
 class UAttributeComponent;
 class UAnimMontage;
 
@@ -33,7 +33,8 @@ private:
 	UPROPERTY(VisibleAnywhere)
 	UAttributeComponent* Attribute;
 
-	UWidgetComponent* HealthBarWidget;
+	UPROPERTY(VisibleAnywhere)
+	UHealthBarComponent* HealthBarWidget;
 	/**
 	* Animation montages
 	*/

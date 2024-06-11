@@ -9,6 +9,8 @@
 #include "Slash/DebugMacros.h"
 #include "Components/ActorComponent.h"
 #include "Components/AttributeComponent.h"
+#include "HUD/HealthBar.h"
+#include "HUD/HealthBarComponent.h"
 
 
 AEnemy::AEnemy()
@@ -24,12 +26,19 @@ AEnemy::AEnemy()
 
 	Attribute = CreateDefaultSubobject<UAttributeComponent>(TEXT("Attribute"));
 
+	HealthBarWidget = CreateDefaultSubobject<UHealthBarComponent>(TEXT("HealthBar"));
+	HealthBarWidget->SetupAttachment(GetRootComponent());
+
 }
 
 
 void AEnemy::BeginPlay()
 {
 	Super::BeginPlay();
+	if (HealthBarWidget)
+	{
+		HealthBarWidget->SetHealthPercent(1.f);
+	}
 	
 }
 
