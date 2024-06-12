@@ -73,6 +73,12 @@ private:
 	
 	UPROPERTY(EditInstanceOnly, Category = "AI Navigation")
 	TArray<AActor*> PatrolTargets;
+
+	UPROPERTY()
+	double PatrolRadius = 20.f;
+	
+	FTimerHandle PatrolTimer;
+	void PatrolTimerFinished();
 	
 	
 protected:
@@ -80,6 +86,12 @@ protected:
 	virtual void BeginPlay() override;
 
 	void Die();
+
+	bool InTargetRange(AActor* Target, double Radius);
+
+	void MoveToTarget(AActor* Target);
+
+	AActor* ChoosePatrolTarget();
 	
 	/**
 	* Play montage functions
