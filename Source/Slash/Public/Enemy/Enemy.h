@@ -69,6 +69,9 @@ private:
 	UPROPERTY()
 	double CombatRadius = 1000.f;
 
+	UPROPERTY()
+	double AttackRadius = 150.f;
+
 	/**
 	 * Navigation
 	 * */
