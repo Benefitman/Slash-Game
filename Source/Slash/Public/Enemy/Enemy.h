@@ -79,6 +79,11 @@ private:
 	
 	FTimerHandle PatrolTimer;
 	void PatrolTimerFinished();
+
+	UPROPERTY(EditAnywhere, Category = "AI Navigation")
+	float WaitMin = 5.f;
+	UPROPERTY(EditAnywhere, Category = "AI Navigation")
+	float WaitMax = 10.f;
 	
 	
 protected:
@@ -98,6 +103,8 @@ protected:
 	* */
 	
 	void PlayHitReactMontage(const FName& SectionName);
+	void CheckCombatTarget();
+	void CheckPatrolTarget();
 
 	UPROPERTY(BlueprintReadOnly)
 	EDeathPose DeathPose = EDeathPose::EDP_Alive;

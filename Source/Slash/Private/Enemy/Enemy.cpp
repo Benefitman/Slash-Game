@@ -145,29 +145,33 @@ void AEnemy::PlayHitReactMontage(const FName& SectionName)
 	}
 }
 
-void AEnemy::Tick(float DeltaTime)
+void AEnemy::CheckCombatTarget()
 {
-	Super::Tick(DeltaTime);
-
-	if (CombatTarget)
+	if (!InTargetRange(CombatTarget, CombatRadius))
 	{
-		const double DistanceToTarget =  (CombatTarget->GetActorLocation() - GetActorLocation()).Size();
-		if (!InTargetRange(CombatTarget, CombatRadius))
+		CombatTarget = nullptr;
+		if (HealthBarWidget)
 		{
-			CombatTarget = nullptr;
-			if (HealthBarWidget)
-			{
-				HealthBarWidget->SetVisibility(false);
-			}
+			HealthBarWidget->SetVisibility(false);
 		}
 	}
+}
 
+void AEnemy::CheckPatrolTarget()
+{
 	if (InTargetRange(PatrolTarget, PatrolRadius))
 	{
 		PatrolTarget = ChoosePatrolTarget();
+		const float WaitTime = FMath::RandRange(WaitMin, WaitMax);
 		GetWorldTimerManager().SetTimer(PatrolTimer, this, &AEnemy::PatrolTimerFinished, 7.f);
 	}
+}
 
+void AEnemy::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	CheckCombatTarget();
+	CheckPatrolTarget();
 }
 
 
