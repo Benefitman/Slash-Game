@@ -40,7 +40,8 @@ private:
 	UHealthBarComponent* HealthBarWidget;
 	/**
 	* Animation montages
-	*/
+	* */	
+	
 	UPROPERTY(EditDefaultsOnly, Category = Montages)
 	UAnimMontage* HitReactMontage;
 
@@ -58,6 +59,20 @@ private:
 
 	UPROPERTY()
 	double CombatRadius = 1000.f;
+
+	/**
+	 * Navigation
+	 * */
+
+	UPROPERTY()
+	class AAIController* EnemyController;
+
+	//Current patrol target
+	UPROPERTY(EditInstanceOnly, Category = "AI Navigation")
+	AActor* PatrolTarget;
+	
+	UPROPERTY(EditInstanceOnly, Category = "AI Navigation")
+	TArray<AActor*> PatrolTargets;
 	
 	
 protected:
@@ -68,7 +83,7 @@ protected:
 	
 	/**
 	* Play montage functions
-	*/
+	* */
 	
 	void PlayHitReactMontage(const FName& SectionName);
 
