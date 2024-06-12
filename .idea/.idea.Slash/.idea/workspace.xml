@@ -301,7 +301,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;CodeLensConfigurable&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -516,7 +516,8 @@
       <workItem from="1718144976388" duration="5689000" />
       <workItem from="1718156494930" duration="12905000" />
       <workItem from="1718181901353" duration="3176000" />
-      <workItem from="1718189433012" duration="4058000" />
+      <workItem from="1718189433012" duration="7104000" />
+      <workItem from="1718209339127" duration="301000" />
     </task>
     <servers />
   </component>

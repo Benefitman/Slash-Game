@@ -8,9 +8,8 @@
 
 class USoundBase;
 class UBoxComponent;
-/**
- * 
- */
+
+
 UCLASS()
 class SLASH_API AWeapon : public AItem
 {
@@ -48,8 +47,6 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = "Weapon Properties")
 	float Damage = 20;
-
-	
 
 public:
 	FORCEINLINE UBoxComponent* GetWeaponBox() const { return WeaponBox; }
