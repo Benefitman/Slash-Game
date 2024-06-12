@@ -258,6 +258,7 @@
     <setting file="file://$PROJECT_DIR$/../../Epic Games/UE_5.3/Engine/Plugins/Runtime/HairStrands/Source/HairStrandsCore/Public/GroomComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/DebugMacros.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Private/Breakable/BreakableActor.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Slash/Private/Characters/BaseCharacter.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Private/Components/AttributeComponent.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Private/Enemy/Enemy.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Private/HUD/HealthBar.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -265,6 +266,7 @@
     <setting file="file://$PROJECT_DIR$/Source/Slash/Private/Interfaces/HitInterface.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Private/Items/Treasure.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Public/Breakable/BreakableActor.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Slash/Public/Characters/BaseCharacter.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Public/Characters/SlashCharacter.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Public/Components/AttributeComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Public/Enemy/Enemy.h" root0="FORCE_HIGHLIGHTING" />
@@ -513,7 +515,8 @@
       <workItem from="1718097377828" duration="10026000" />
       <workItem from="1718144976388" duration="5689000" />
       <workItem from="1718156494930" duration="12905000" />
-      <workItem from="1718181901353" duration="431000" />
+      <workItem from="1718181901353" duration="3176000" />
+      <workItem from="1718189433012" duration="4058000" />
     </task>
     <servers />
   </component>

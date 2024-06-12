@@ -2,7 +2,6 @@
 
 #include "Characters/SlashCharacter.h"
 #include "Animation/AnimMontage.h"
-#include "Characters/SlashCharacter.h"
 #include "Components/InputComponent.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
@@ -11,9 +10,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GroomComponent.h"
 #include "Item.h"
-#include "Components/BoxComponent.h"
 #include "Item/Weapon/Weapon.h"
-#include "Components/BoxComponent.h"
 
 // Sets default values
 ASlashCharacter::ASlashCharacter()
@@ -205,15 +202,6 @@ void ASlashCharacter::Jump()
 {
 	if (ActionState != EActionState::EAS_Unoccupied) return;
 	Super::Jump();
-}
-
-void ASlashCharacter::SetWeaponCollisionEnabled(ECollisionEnabled::Type CollisionEnabled)
-{
-	if (EquippedWeapon && EquippedWeapon->GetWeaponBox())
-	{
-		EquippedWeapon->GetWeaponBox()->SetCollisionEnabled(CollisionEnabled);
-		EquippedWeapon->IgnoreActors.Empty();
-	}
 }
 
 void ASlashCharacter::Tick(float DeltaTime)
