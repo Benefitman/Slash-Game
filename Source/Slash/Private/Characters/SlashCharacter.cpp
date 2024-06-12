@@ -172,6 +172,7 @@ void ASlashCharacter::Dodge()
 
 void ASlashCharacter::PlayAttackMontage()
 {
+	Super::PlayAttackMontage();
 	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
 	if (AnimInstance && AttackMontage)
 	{
