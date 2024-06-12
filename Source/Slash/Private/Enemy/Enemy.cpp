@@ -14,37 +14,33 @@
 #include "HUD/HealthBar.h"
 #include "HUD/HealthBarComponent.h"
 #include "NavigationPath.h"
+#include "Characters/SlashCharacter.h"
 #include "Navigation/PathFollowingComponent.h"
 #include "Perception/PawnSensingComponent.h"
 
 
 AEnemy::AEnemy()
 {
-
 	PrimaryActorTick.bCanEverTick = true;
-
-	GetMesh()->SetCollisionObjectType(ECC_WorldDynamic);
-	GetMesh()->SetCollisionResponseToChannel(ECC_Visibility, ECR_Block);
-	GetMesh()->SetCollisionResponseToChannel(ECC_Camera, ECR_Ignore);
-	GetCapsuleComponent()->SetCollisionResponseToChannel(ECC_Camera, ECR_Ignore);
+	GetMesh()->SetCollisionObjectType(ECollisionChannel::ECC_WorldDynamic);
+	GetMesh()->SetCollisionResponseToChannel(ECollisionChannel::ECC_Visibility, ECollisionResponse::ECR_Block);
+	GetMesh()->SetCollisionResponseToChannel(ECollisionChannel::ECC_Camera, ECollisionResponse::ECR_Ignore);
+	
 	GetMesh()->SetGenerateOverlapEvents(true);
-
+	GetCapsuleComponent()->SetCollisionResponseToChannel(ECollisionChannel::ECC_Camera, ECollisionResponse::ECR_Ignore);
 	Attribute = CreateDefaultSubobject<UAttributeComponent>(TEXT("Attribute"));
-
 	HealthBarWidget = CreateDefaultSubobject<UHealthBarComponent>(TEXT("HealthBar"));
 	HealthBarWidget->SetupAttachment(GetRootComponent());
-
+	
 	GetCharacterMovement()->bOrientRotationToMovement = true;
-	bUseControllerRotationYaw = false;
 	bUseControllerRotationPitch = false;
+	bUseControllerRotationYaw = false;
 	bUseControllerRotationRoll = false;
-
+	
 	PawnSensing = CreateDefaultSubobject<UPawnSensingComponent>(TEXT("PawnSensing"));
 	PawnSensing->SightRadius = 3500.f;
 	PawnSensing->SetPeripheralVisionAngle(55.f);
-
 }
-
 
 void AEnemy::PatrolTimerFinished()
 {
@@ -104,7 +100,7 @@ void AEnemy::Die()
 		HealthBarWidget->SetVisibility(false);
 	}
 	GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-	SetLifeSpan(4.f);
+	SetLifeSpan(7.f);
 }
 
 bool AEnemy::InTargetRange(AActor* Target, double Radius)
@@ -120,7 +116,7 @@ void AEnemy::MoveToTarget(AActor* Target)
 {
 	if (EnemyController == nullptr || Target == nullptr) return;
 	FAIMoveRequest MoveRequest;
-	MoveRequest.SetGoalActor(PatrolTarget);
+	MoveRequest.SetGoalActor(Target);
 	MoveRequest.SetAcceptanceRadius(15.f);
 	EnemyController->MoveTo(MoveRequest);
 }
@@ -147,7 +143,16 @@ AActor* AEnemy::ChoosePatrolTarget()
 
 void AEnemy::PawnSeen(APawn* SeenPawn)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Pawn Seen!"));
+	if (EnemyState == EEnemyState::EES_Chasing) return;
+	if (SeenPawn->ActorHasTag(FName("SlashCharacter")))
+	{
+		EnemyState = EEnemyState::EES_Chasing;
+		GetWorldTimerManager().ClearTimer(PatrolTimer);
+		GetCharacterMovement()->MaxWalkSpeed = 300.f;
+		CombatTarget = SeenPawn;
+		MoveToTarget(CombatTarget);
+		UE_LOG(LogTemp, Warning, TEXT("Seen Pawn, Now Chasing"));
+	}
 }
 
 void AEnemy::PlayHitReactMontage(const FName& SectionName)
@@ -185,8 +190,15 @@ void AEnemy::CheckPatrolTarget()
 void AEnemy::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	CheckCombatTarget();
-	CheckPatrolTarget();
+
+	if (EnemyState > EEnemyState::EES_Patrolling)
+	{
+		CheckCombatTarget();
+	}
+	else
+	{
+		CheckPatrolTarget();
+	}
 }
 
 

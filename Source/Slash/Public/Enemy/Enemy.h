@@ -93,8 +93,9 @@ private:
 	float WaitMin = 5.f;
 	UPROPERTY(EditAnywhere, Category = "AI Navigation")
 	float WaitMax = 10.f;
-	
-	
+
+	EEnemyState EnemyState = EEnemyState::EES_Patrolling;
+
 protected:
 	
 	virtual void BeginPlay() override;
