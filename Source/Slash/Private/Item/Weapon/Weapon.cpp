@@ -96,11 +96,11 @@ void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Oth
 
 	FHitResult BoxHit;
 	BoxTrace(BoxHit);
-	
+
 	if (BoxHit.GetActor())
 	{
-		if (ActorIsSameType(OtherActor)) return;
-		
+		if (ActorIsSameType(BoxHit.GetActor())) return;
+
 		UGameplayStatics::ApplyDamage(BoxHit.GetActor(), Damage, GetInstigator()->GetController(), this, UDamageType::StaticClass());
 		ExecuteGetHit(BoxHit);
 		CreateFields(BoxHit.ImpactPoint);

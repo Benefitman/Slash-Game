@@ -49,8 +49,7 @@ void AEnemy::Tick(float DeltaTime)
 	}
 }
 
-float AEnemy::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator,
-	AActor* DamageCauser)
+float AEnemy::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
 {
 	HandleDamage(DamageAmount);
 	CombatTarget = EventInstigator->GetPawn();
@@ -327,14 +326,3 @@ void AEnemy::PawnSeen(APawn* SeenPawn)
 		ChaseTarget();
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
