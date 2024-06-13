@@ -6,16 +6,20 @@
 #include "GameFramework/HUD.h"
 #include "SlashHUD.generated.h"
 
-/**
- * 
- */
+class USlashOverlay;
+
 UCLASS()
 class SLASH_API ASlashHUD : public AHUD
 {
 	GENERATED_BODY()
 
+protected:
+	virtual void BeginPlay() override;
 
 private:
 	UPROPERTY(EditDefaultsOnly, Category = Slash)
-	TSubclassOf<class USlashOverlay> SlashOverlayClass;
+	TSubclassOf<USlashOverlay> SlashOverlayClass;
+
+	UPROPERTY()
+	USlashOverlay* SlashOverlay;
 };
