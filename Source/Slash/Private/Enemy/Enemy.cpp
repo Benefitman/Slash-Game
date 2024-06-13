@@ -1,18 +1,16 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
-#include "Enemy/Enemy.h"
 #include "AIController.h"
 #include "Components/SkeletalMeshComponent.h"
-#include "Components/CapsuleComponent.h"
-#include "Components/ActorComponent.h"
 #include "Components/AttributeComponent.h"
+#include "Components/ActorComponent.h"
+#include "Enemy/Enemy.h"
+#include "Perception/PawnSensingComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "HUD/HealthBarComponent.h"
 #include "Characters/SlashCharacter.h"
 #include "Item/Weapon/Weapon.h"
 #include "Navigation/PathFollowingComponent.h"
-#include "Perception/PawnSensingComponent.h"
 
 
 AEnemy::AEnemy()
@@ -23,7 +21,7 @@ AEnemy::AEnemy()
 	GetMesh()->SetCollisionResponseToChannel(ECollisionChannel::ECC_Camera, ECollisionResponse::ECR_Ignore);
 	
 	GetMesh()->SetGenerateOverlapEvents(true);
-	GetCapsuleComponent()->SetCollisionResponseToChannel(ECollisionChannel::ECC_Camera, ECollisionResponse::ECR_Ignore);
+
 	HealthBarWidget = CreateDefaultSubobject<UHealthBarComponent>(TEXT("HealthBar"));
 	HealthBarWidget->SetupAttachment(GetRootComponent());
 	
