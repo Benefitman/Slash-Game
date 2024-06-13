@@ -50,6 +50,8 @@ protected:
 
 private:
 	/** AI Behavior */
+	void InitializeEnemy();
+	void SpawnDefaultWeapon();
 	void CheckCombatTarget();
 	void CheckPatrolTarget();
 	void PatrolTimerFinished();
