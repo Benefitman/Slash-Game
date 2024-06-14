@@ -62,9 +62,9 @@ void AEnemy::Destroyed()
 	if (EquippedWeapon) EquippedWeapon->Destroy();
 };
 
-void AEnemy::GetHit_Implementation(const FVector& ImpactPoint)
+void AEnemy::GetHit_Implementation(const FVector& ImpactPoint, AActor* Hitter)
 {
-	Super::GetHit_Implementation(ImpactPoint);
+	Super::GetHit_Implementation(ImpactPoint, Hitter);
 	ShowHealthBar();
 };
 
@@ -78,8 +78,8 @@ void AEnemy::BeginPlay()
 
 void AEnemy::Die()
 {
+	Super::Die();
 	EnemyState = EEnemyState::EES_Dead;
-	PlayDeathMontage();
 	ClearAttackTimer();
 	HideHealthBar();
 	DisableCapsule();
@@ -100,8 +100,6 @@ bool AEnemy::CanAttack()
 			!IsEngaged() &&
 				!IsDead();
 	return bCanAttack;
-		
-	return IsInsideAttackRadius() && !IsAttacking();
 }
 
 void AEnemy::HandleDamage(float DamageAmount)
@@ -111,17 +109,6 @@ void AEnemy::HandleDamage(float DamageAmount)
 	{
 		HealthBarWidget->SetHealthPercent(Attribute->GetHealthPercent());
 	}
-}
-
-int32 AEnemy::PlayDeathMontage()
-{
-	const int32 Selection = Super::PlayDeathMontage();
-	TEnumAsByte<EDeathPose> Pose(Selection);
-	if (Pose < EDeathPose::EDP_MAX)
-	{
-		DeathPose = Pose;
-	}
-	return Selection;
 }
 
 void AEnemy::AttackEnd()

@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Characters/CharacterTypes.h"
 #include "Interfaces/HitInterface.h"
 #include "BaseCharacter.generated.h"
 
@@ -22,10 +23,10 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
-	virtual void GetHit_Implementation(const FVector& ImpactPoint) override;
+	virtual void GetHit_Implementation(const FVector& ImpactPoint, AActor* Hitter) override;
 	virtual void Attack();
 	virtual bool CanAttack();
-	bool IsAlive();	
+	bool IsAlive();
 	virtual void Die();
 	void DirectionalHitReact(const FVector& ImpactPoint);
 	virtual void HandleDamage(float DamageAmount);
@@ -36,6 +37,7 @@ protected:
 	void PlayHitSound(const FVector& ImpactPoint);
 	void SpawnHitParticles(const FVector& ImpactPoint);
 	void DisableCapsule();
+	void DisableMeshCollision();
 	
 	
 	void PlayHitReactMontage(const FName& SectionName);
@@ -50,6 +52,9 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	UAttributeComponent* Attribute;
+	
+	UPROPERTY(BlueprintReadOnly)
+	TEnumAsByte<EDeathPose> DeathPose;
 
 private:
 	void PlayMontageSection(UAnimMontage* Montage, const FName& SectionName);
@@ -76,5 +81,7 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = Combat)
 	UParticleSystem* HitParticles;
-	
+
+public:
+	FORCEINLINE TEnumAsByte<EDeathPose> GetDeathPose() const { return DeathPose; }
 };
