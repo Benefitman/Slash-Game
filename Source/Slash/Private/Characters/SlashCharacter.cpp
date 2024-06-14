@@ -160,26 +160,6 @@ bool ASlashCharacter::CanArm()
 			EquippedWeapon;
 }
 
-void ASlashCharacter::InitializeSlashOverlay()
-{
-	APlayerController* PlayerController = Cast<APlayerController>(GetController());
-	if (PlayerController)
-	{
-		ASlashHUD* SlashHUD = Cast<ASlashHUD>(PlayerController->GetHUD());
-		if (SlashHUD)
-		{
-			SlashOverlay = SlashHUD->GetSlashOverlay();
-			if (SlashOverlay && Attribute)
-			{
-				SlashOverlay->SetHealthBarPercent(Attribute->GetHealthPercent());
-				SlashOverlay->SetStaminaBarPercent(1.f);
-				SlashOverlay->SetGold(0);
-				SlashOverlay->SetSouls(0);
-			}
-		}
-	}
-}
-
 void ASlashCharacter::Disarm()
 {
 	if (EquippedWeapon)
@@ -232,9 +212,10 @@ void ASlashCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 }
 
 float ASlashCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator,
-	AActor* DamageCauser)
+                                  AActor* DamageCauser)
 {
 	HandleDamage(DamageAmount);
+	SetHUDHealth();
 	return DamageAmount;
 }
 
@@ -243,5 +224,30 @@ void ASlashCharacter::GetHit_Implementation(const FVector& ImpactPoint)
 	Super::GetHit_Implementation(ImpactPoint);
 }
 
+void ASlashCharacter::InitializeSlashOverlay()
+{
+	APlayerController* PlayerController = Cast<APlayerController>(GetController());
+	if (PlayerController)
+	{
+		ASlashHUD* SlashHUD = Cast<ASlashHUD>(PlayerController->GetHUD());
+		if (SlashHUD)
+		{
+			SlashOverlay = SlashHUD->GetSlashOverlay();
+			if (SlashOverlay && Attribute)
+			{
+				SlashOverlay->SetHealthBarPercent(Attribute->GetHealthPercent());
+				SlashOverlay->SetStaminaBarPercent(1.f);
+				SlashOverlay->SetGold(0);
+				SlashOverlay->SetSouls(0);
+			}
+		}
+	}
+}
 
-
+void ASlashCharacter::SetHUDHealth()
+{
+	if (SlashOverlay && Attribute)
+	{
+		SlashOverlay->SetHealthBarPercent(Attribute->GetHealthPercent());
+	}
+}
