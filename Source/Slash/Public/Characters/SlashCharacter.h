@@ -15,6 +15,7 @@ class UCameraComponent;
 class UGroomComponent;
 class AItem;
 class UAnimMontage;
+class USlashOverlay;
 
 UCLASS()
 class SLASH_API ASlashCharacter : public ABaseCharacter
@@ -79,6 +80,11 @@ protected:
 	bool CanArm();
 
 private:
+	void InitializeSlashOverlay();
+
+	UPROPERTY()
+	USlashOverlay* SlashOverlay;
+	
 	UPROPERTY(VisibleAnywhere)
 	ECharacterState CharacterState = ECharacterState::ECS_Unequipped;
 
