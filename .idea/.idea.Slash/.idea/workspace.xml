@@ -260,17 +260,15 @@
     <setting file="file://$PROJECT_DIR$/Source/Slash/Private/Breakable/BreakableActor.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Private/Characters/BaseCharacter.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Private/Components/AttributeComponent.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Unreal Projects/Slash 5.3/Source/Slash/Private/Enemy/Enemy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Private/Enemy/Enemy.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Unreal Projects/Slash 5.3/Source/Slash/Private/Enemy/Enemy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Unreal Projects/Slash 5.3/Source/Slash/Private/Enemy/Enemy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Unreal Projects/Slash 5.3/Source/Slash/Private/Enemy/Enemy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Private/HUD/HealthBar.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Private/HUD/HealthBarComponent.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Private/HUD/SlashHUD.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Private/HUD/SlashOverlay.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Private/Interfaces/HitInterface.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Slash/Private/Interfaces/PickupInterface.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Private/Items/Treasure.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Slash/Private/Soul.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Public/Breakable/BreakableActor.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Public/Characters/BaseCharacter.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Public/Characters/SlashCharacter.h" root0="FORCE_HIGHLIGHTING" />
@@ -281,8 +279,10 @@
     <setting file="file://$PROJECT_DIR$/Source/Slash/Public/HUD/SlashHUD.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Public/HUD/SlashOverlay.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Public/Interfaces/HitInterface.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Slash/Public/Interfaces/PickupInterface.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Public/Item/Treasure.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Public/Item/Weapon/Weapon.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Slash/Public/Soul.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Slash.Build.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -534,6 +534,7 @@
       <workItem from="1718350972749" duration="1009000" />
       <workItem from="1718352635608" duration="3532000" />
       <workItem from="1718542410607" duration="2025000" />
+      <workItem from="1718562924228" duration="3411000" />
     </task>
     <servers />
   </component>

@@ -57,7 +57,7 @@ protected:
     	USphereComponent* Sphere;
 
 	UPROPERTY(EditAnywhere)
-	class UNiagaraComponent* EmbersEffect;
+	class UNiagaraComponent* ItemEffect;
 	
 public:	
 	// Called every frame
