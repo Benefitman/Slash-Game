@@ -11,6 +11,8 @@
 #include "Components/StaticMeshComponent.h"
 #include "GroomComponent.h"
 #include "Item.h"
+#include "Item/Treasure.h"
+#include "Soul.h"
 #include "Item/Weapon/Weapon.h"
 #include "HUD/SlashHUD.h"
 #include "HUD/SlashOverlay.h"
@@ -215,7 +217,20 @@ void ASlashCharacter::SetOverlappingItem(AItem* Item)
 
 void ASlashCharacter::AddSouls(ASoul* Soul)
 {
-	UE_LOG(LogTemp, Warning, TEXT("ASlashCharacter::AddSoul"));
+	if (Attribute && SlashOverlay)
+	{
+		Attribute->AddSouls(Soul->GetSouls());
+		SlashOverlay->SetSouls(Attribute->GetSouls());
+	}
+}
+
+void ASlashCharacter::AddGold(ATreasure* Treasure)
+{
+	if (Attribute && SlashOverlay)
+	{
+		Attribute->AddGold(Treasure->GetGold());
+		SlashOverlay->SetGold(Attribute->GetGold());
+	}
 }
 
 void ASlashCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
