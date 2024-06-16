@@ -67,10 +67,14 @@ protected:
 
 	UFUNCTION(BlueprintCallable)
 	void FinishEquipping();
+
+	UFUNCTION(BlueprintCallable)
+	void HitReactEnd();
 	
 	virtual void Attack() override;
 	virtual void AttackEnd() override;
 	void Die();
+	
 	virtual bool CanAttack() override;
 
 	void EquipWeapon(AWeapon* Weapon);

@@ -260,7 +260,11 @@
     <setting file="file://$PROJECT_DIR$/Source/Slash/Private/Breakable/BreakableActor.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Private/Characters/BaseCharacter.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Private/Components/AttributeComponent.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Unreal Projects/Slash 5.3/Source/Slash/Private/Enemy/Enemy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Private/Enemy/Enemy.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Unreal Projects/Slash 5.3/Source/Slash/Private/Enemy/Enemy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unreal Projects/Slash 5.3/Source/Slash/Private/Enemy/Enemy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unreal Projects/Slash 5.3/Source/Slash/Private/Enemy/Enemy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Private/HUD/HealthBar.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Private/HUD/HealthBarComponent.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Slash/Private/HUD/SlashHUD.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -526,6 +530,10 @@
       <workItem from="1718297509173" duration="886000" />
       <workItem from="1718299057833" duration="8789000" />
       <workItem from="1718321878115" duration="14850000" />
+      <workItem from="1718344754421" duration="392000" />
+      <workItem from="1718350972749" duration="1009000" />
+      <workItem from="1718352635608" duration="3532000" />
+      <workItem from="1718542410607" duration="2025000" />
     </task>
     <servers />
   </component>

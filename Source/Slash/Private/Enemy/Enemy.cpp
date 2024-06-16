@@ -12,7 +12,6 @@
 #include "Item/Weapon/Weapon.h"
 #include "Navigation/PathFollowingComponent.h"
 
-
 AEnemy::AEnemy()
 {
 	PrimaryActorTick.bCanEverTick = true;
